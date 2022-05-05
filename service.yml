@@ -1,0 +1,47 @@
+name: httpd-php
+title: Apache HTTP server (PHP)
+type: service
+from: httpd
+update: auto
+
+containers:
+- name: httpd
+  env:
+  - name: APACHE_VHOST_PRESET
+    value: php
+    
+labels:
+- httpd
+- httpd-php
+
+links:
+- name: backend
+  title: Backend
+  env:
+  - name: APACHE_BACKEND_HOST
+    value: '{{link.host}}'
+  - name: APACHE_BACKEND_PORT
+    value: '{{link.port}}'
+  selectors:
+  - type: service
+    labels:
+    - php-fpm
+    
+build:
+  dockerfile: Dockerfile
+
+volumes:
+- name: files
+  from: backend
+  title: Files
+  path: /mnt/files
+
+settings:
+- name: docroot
+  title: HTTPd docroot
+  from: backend
+  var: DOCROOT_SUBDIR
+
+env:
+- name: APACHE_DOCUMENT_ROOT
+  value: /var/www/html/$(DOCROOT_SUBDIR)
