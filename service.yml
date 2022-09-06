@@ -39,7 +39,6 @@ volumes:
 settings:
 - name: docroot
   title: HTTPd docroot
-  from: backend
   var: DOCROOT_SUBDIR
 
 env:
