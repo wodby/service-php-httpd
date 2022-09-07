@@ -1,4 +1,4 @@
-name: httpd-php
+name: php-httpd
 title: Apache HTTP server (PHP)
 type: service
 from: httpd
@@ -12,7 +12,7 @@ containers:
     
 labels:
 - httpd
-- httpd-php
+- php
 
 links:
 - name: backend
