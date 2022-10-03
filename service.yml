@@ -30,12 +30,6 @@ links:
 build:
   dockerfile: Dockerfile
 
-volumes:
-- name: files
-  from: backend
-  title: Files
-  path: /mnt/files
-
 settings:
 - name: docroot
   title: HTTPd docroot
