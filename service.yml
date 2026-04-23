@@ -38,7 +38,7 @@ workloads:
   kind: deployment
   primary: true
   containers:
-  - name: httpd
+  - name: apache
     env:
     - name: APACHE_VHOST_PRESET
       value: php
