@@ -32,6 +32,7 @@ settings:
 env:
 - name: APACHE_DOCUMENT_ROOT
   value: /var/www/html/$(DOCROOT_SUBDIR)
+
 workloads:
 - id: main
   kind: deployment
