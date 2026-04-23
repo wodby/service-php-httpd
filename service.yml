@@ -34,7 +34,10 @@ env:
   value: /var/www/html/$(DOCROOT_SUBDIR)
 
 workloads:
-- id: main
+- name: main
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: '{{service.helm.release}}'
   kind: deployment
   primary: true
   containers:
