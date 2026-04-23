@@ -4,12 +4,6 @@ type: service
 from: httpd
 update: auto
 
-containers:
-- name: httpd
-  env:
-  - name: APACHE_VHOST_PRESET
-    value: php
-    
 labels:
 - httpd
 - php
@@ -26,7 +20,7 @@ links:
   - type: service
     labels:
     - php-fpm
-    
+
 build:
   dockerfile: Dockerfile
 
@@ -38,3 +32,12 @@ settings:
 env:
 - name: APACHE_DOCUMENT_ROOT
   value: /var/www/html/$(DOCROOT_SUBDIR)
+workloads:
+- id: main
+  kind: deployment
+  primary: true
+  containers:
+  - name: httpd
+    env:
+    - name: APACHE_VHOST_PRESET
+      value: php
