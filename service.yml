@@ -2,6 +2,7 @@ name: php-httpd
 title: Apache HTTP server (PHP)
 type: service
 from: httpd
+fromVersion: "^1.0.0"
 
 labels:
 - httpd
