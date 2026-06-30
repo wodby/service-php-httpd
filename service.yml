@@ -2,7 +2,6 @@ name: php-httpd
 title: Apache HTTP server (PHP)
 type: service
 from: httpd
-update: auto
 
 labels:
 - httpd
