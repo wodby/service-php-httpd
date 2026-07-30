@@ -3,7 +3,7 @@ title: Apache HTTP server (PHP)
 type: service
 from: httpd
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.4"
+fromVersion: "1.0.5"
 
 labels:
 - httpd
