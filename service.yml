@@ -23,6 +23,7 @@ links:
     - php-fpm
 
 build:
+  link: backend
   dockerfile: Dockerfile
 
 settings:
