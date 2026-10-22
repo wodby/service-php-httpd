@@ -4,7 +4,7 @@ type: service
 from: httpd
 guidance: GUIDANCE.md
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.1.0"
+fromVersion: "1.1.1"
 
 labels:
 - httpd
