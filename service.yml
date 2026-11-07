@@ -45,6 +45,10 @@ workloads:
   primary: true
   containers:
   - name: apache
+    resources:
+      request:
+        cpu: 20
+        memory: 80
     env:
     - name: APACHE_VHOST_PRESET
       value: php
